@@ -4,7 +4,7 @@
   "description": "create binary search",
   "main": "index.ts",
   "scripts": {
-    "test": "jest --collectCoverage",
+    "test": "jest --coverage",
     "dev": "tsc --watch",
     "lint": "eslint --ext .ts . --fix",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\""
