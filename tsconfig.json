@@ -13,8 +13,10 @@
     "isolatedModules": true,
     "baseUrl": ".",
     "noFallthroughCasesInSwitch": true,
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "noImplicitAny": true
   },
   "compileOnSave": true,
-  "include": ["."]
+  "include": ["."],
+  "exclude": ["node_modules", "./dist/**/*"]
 }

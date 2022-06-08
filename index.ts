@@ -1,12 +1,11 @@
-interface ITreeNode<TValue> {
-  [x: string]: any;
+type ITreeNode<TValue> = {
   left?: ITreeNode<TValue>
   right?: ITreeNode<TValue>
   value: TValue
 }
 
 export class Tree<TValue extends number> {
-  public root?: ITreeNode<TValue>;
+  public root?: ITreeNode<TValue>
 
   public insert(value: TValue) {
     if (this.root) {
@@ -20,7 +19,7 @@ export class Tree<TValue extends number> {
 
   private _insert(node: ITreeNode<TValue>, value: TValue) {
     const direction = value >= node.value ? 'right' : 'left'
-    if (node[direction] !== undefined) this._insert(node[direction]!, value)
+    if (node[direction] !== undefined) this._insert(node[direction]!, value) // eslint-disable-line @typescript-eslint/no-non-null-assertion
     else node[direction] = { value }
   }
 }
