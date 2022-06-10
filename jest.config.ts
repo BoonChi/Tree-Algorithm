@@ -1,4 +1,4 @@
-import type { Config } from '@jest/types'
+import type { Config } from '@jest/types';
 
 const config: Config.InitialOptions = {
   preset: 'ts-jest',
@@ -6,5 +6,13 @@ const config: Config.InitialOptions = {
   verbose: true,
   coveragePathIgnorePatterns: ['./dist/', './node_modules/', './coverage/'],
   modulePathIgnorePatterns: ['<rootDir>/dist/'],
-}
-export default config
+  coverageThreshold: {
+    global: {
+      branches: 100,
+      functions: 100,
+      lines: 100,
+      statements: 100,
+    },
+  },
+};
+export default config;
